@@ -19,10 +19,10 @@ const examChart = new Chart(ctx, {
 });
 
 // Logout button logic
-const logoutBtn = document.querySelector('.logout');
+const logoutBtn = document.querySelector('.logout'); // matches <button class="logout">
 logoutBtn.addEventListener('click', () => {
-    // Clear any login info from localStorage/sessionStorage
-    localStorage.removeItem('loggedInUser'); // if using localStorage
+    // Clear login info
+    localStorage.removeItem('loggedInUser');   // if you store login info
     sessionStorage.removeItem('loggedInUser'); // if using sessionStorage
 
     // Redirect to login page
