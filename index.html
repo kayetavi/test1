@@ -1,95 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trackcert Login</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .login-container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      width: 350px;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .btn-login {
-      width: 100%;
-      padding: 12px;
-      background-color: #007bff;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .btn-login:hover {
-      background-color: #0056b3;
-    }
-    .error {
-      color: red;
-      margin-top: 10px;
-      text-align: center;
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://kayetdms.live/" />
+
+  <!-- ✅ SEO Title & Meta Description -->
+  <title>KayetDMS - Digital Tools | Integrity Dashboard</title> 
+  <meta name="description" content="KayetDMS is a web-based dashboard for managing damage mechanisms, tracking corrosion rates, calculating remaining life, and performing standard-compliant design thickness assessments for industrial equipment." />
+  <meta name="keywords" content="Damage Mechanisms, Corrosion Monitoring, Remaining Life, Design Thickness, Maintenance Tools, Cracking Mechanism Finder, Risk-Based Inspection Methodology, KayetDMS" />
+  <meta name="author" content="Avijit Kayet" />
+
+  <!-- ✅ Social Media Meta -->
+  <meta property="og:title" content="KayetDMS - Damage mechanism & Digital Tools" />
+  <meta property="og:description" content="Digital Maintenance Dashboard for Inspection, Inventory Calculation, Damage mechanism, Inspection confidence, Corrosion Tracking as per damage mechanism & More" />
+  <meta property="og:image" content="https://kayetdms.live/image/avijitk-logo.png" />
+  <meta property="og:url" content="https://kayetdms.live/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ✅ Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+  <link rel="manifest" href="image/site.webmanifest">
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="login-page">
+
   <div class="login-container">
-    <h2>Trackcert Login</h2>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button class="btn-login" onclick="login()">Login</button>
-    <div class="error" id="error">Invalid username or password!</div>
+    <img src="image/avijitk-logo.png" alt="KayetDMS Logo" class="logo" />
+    <h2>Integrity Digital Tools</h2>
+
+    <!-- ✅ Login Form -->
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+
+      <!-- ✅ Google reCAPTCHA v2 widget -->
+      <div class="g-recaptcha" data-sitekey="6LfR-pYrAAAAAJiYxFgogpeVX1f995czCkKH6BTt"></div>
+
+      <button type="submit" id="loginBtn">
+        <span class="btn-text">Login</span>
+        <div class="spinner"></div>
+      </button>
+    </form>
+
+    <!-- Error Message -->
+    <div class="error" id="errorMsg"></div>
   </div>
 
-  <script>
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-credit">
+      &copy; 2025 | Created by Avijit Kayet
+    </div>
+  </footer>
 
-      // Example users with roles
-      const users = [
-        { username: "admin", password: "admin123", role: "admin" },
-        { username: "user", password: "user123", role: "employee" },
-        { username: "trainer", password: "trainer123", role: "trainer" }
-      ];
+  <!-- ✅ Scripts -->
+  <script type="module" src="js/login.js"></script>
+  <script src="js/login-loading.js"></script>
 
-      const validUser = users.find(user => user.username === username && user.password === password);
-
-      if (validUser) {
-        // Redirect based on role
-        if (validUser.role === "admin") {
-          window.location.href = "dashboard_admin.html";
-        } else if (validUser.role === "employee") {
-          window.location.href = "dashboard_employee.html";
-        } else if (validUser.role === "trainer") {
-          window.location.href = "dashboard_trainer.html";
-        }
-      } else {
-        document.getElementById('error').style.display = "block";
-      }
-    }
-  </script>
+  <!-- ✅ Google reCAPTCHA v2 script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
