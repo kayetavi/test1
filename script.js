@@ -1,3 +1,4 @@
+// Exam Chart
 const ctx = document.getElementById('examChart').getContext('2d');
 const examChart = new Chart(ctx, {
     type: 'pie',
@@ -15,4 +16,15 @@ const examChart = new Chart(ctx, {
             }
         }
     }
+});
+
+// Logout button logic
+const logoutBtn = document.querySelector('.logout');
+logoutBtn.addEventListener('click', () => {
+    // Clear any login info from localStorage/sessionStorage
+    localStorage.removeItem('loggedInUser'); // if using localStorage
+    sessionStorage.removeItem('loggedInUser'); // if using sessionStorage
+
+    // Redirect to login page
+    window.location.href = "index.html";
 });
