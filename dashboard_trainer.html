@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trackcert Trainer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Trackcert</div>
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Exams</li>
+          <li>Training Hours</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header>
+        <h1>Welcome, Trainer</h1>
+        <button class="logout">Logout</button>
+      </header>
+
+      <!-- Exam Management -->
+      <section class="card">
+        <h2>Exam Management</h2>
+        <button class="btn">Add Exam</button>
+        <div class="exam-container">
+          <canvas id="examChart" width="150" height="150"></canvas>
+          <div class="exam-stats">
+            <div>UT Exams <div class="bar blue" style="width: 60%;"></div></div>
+            <div>RT Exams <div class="bar blue-red" style="width: 40%;"></div></div>
+            <div>PT Exams <div class="bar red" style="width: 20%;"></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
